@@ -16,7 +16,7 @@ namespace AplicacionWindows_2
         {
             InitializeComponent();
         }
-
+        //Agregando un comentario para probar algo en Git. 
         private void tbx1_Validated(object sender, EventArgs e)  
         {
             if (tbx1.Text == string.Empty)
