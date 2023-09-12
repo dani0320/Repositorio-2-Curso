@@ -16,50 +16,49 @@ namespace AplicacionWindows_2
         {
             InitializeComponent();
         }
-        //Agregando un comentario para probar algo en Git. 
-        private void tbx1_Validated(object sender, EventArgs e)  
+        private void tbxNombre_Validated(object sender, EventArgs e)  
         {
-            if (tbx1.Text == string.Empty)
+            if (tbxNombre.Text == string.Empty)
             {
-                tbx1.BackColor = Color.Red;
+                tbxNombre.BackColor = Color.Red;
                 MessageBox.Show("CAMPO OBLIGATORIO.");
             }
-            else if (tbx1.Text.Length >= 4)
+            else if (tbxNombre.Text.Length >= 4)
             {
-                tbx1.BackColor = SystemColors.Window;
+                tbxNombre.BackColor = SystemColors.Window;
             }
             else 
                 MessageBox.Show("Debe contener al menos 4 caracteres. "); 
         }
 
-        private void tbx2_Validated(object sender, EventArgs e)
+        private void tbxApellido_Validated(object sender, EventArgs e)
         {
-            if (tbx2.Text == string.Empty)
+            if (tbxApellido.Text == string.Empty)
             {
-                tbx2.BackColor = Color.Red;
+                tbxApellido.BackColor = Color.Red;
                 MessageBox.Show("CAMPO OBLIGATORIO.");
             }
-            else if (tbx2.Text.Length >= 4)
+            else if (tbxApellido.Text.Length >= 4)
             {
-                tbx2.BackColor = SystemColors.Window;
+                tbxApellido.BackColor = SystemColors.Window;
             }
             else
                 MessageBox.Show("Debe contener al menos 4 caracteres. ");
         }
 
-        private void tbx3_Validated(object sender, EventArgs e)
+        private void tbxEdad_Validated(object sender, EventArgs e)
         {
-            if (tbx3.Text == string.Empty)
+            if (tbxEdad.Text == string.Empty)
             {
-                tbx3.BackColor = Color.Red;
+                tbxEdad.BackColor = Color.Red;
                 MessageBox.Show("CAMPO OBLIGATORIO.");
             }
             else
-                tbx3.BackColor = SystemColors.Window;
+                tbxEdad.BackColor = SystemColors.Window;
         }
 
         //Para ingresar solo nros en elTextBoxEdad
-        private void tbx3_KeyPress(object sender, KeyPressEventArgs e)
+        private void tbxEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -67,16 +66,16 @@ namespace AplicacionWindows_2
             }
         }
 
-        private void tbx4_Validated(object sender, EventArgs e)
+        private void tbxDireccion_Validated(object sender, EventArgs e)
         {
-            if (tbx4.Text == string.Empty)
+            if (tbxDireccion.Text == string.Empty)
             {
-                tbx4.BackColor = Color.Red;
+                tbxDireccion.BackColor = Color.Red;
                 MessageBox.Show("CAMPO OBLIGATORIO.");
             }
-            else if (tbx4.Text.Length >= 4)
+            else if (tbxDireccion.Text.Length >= 4)
             {
-                tbx4.BackColor = SystemColors.Window;
+                tbxDireccion.BackColor = SystemColors.Window;
             }
             else
                 MessageBox.Show("Debe contener al menos 4 caracteres. ");
@@ -85,12 +84,12 @@ namespace AplicacionWindows_2
 
         //Agregar para el ListWiew. 
         private int conAceptar = 1; 
-        private void btn1_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
-            string textoNombre = tbx1.Text;
-            string textoApellido = tbx2.Text;
-            string textoEdad = tbx3.Text;
-            string textoDireccion = tbx4.Text;
+            string textoNombre = tbxNombre.Text;
+            string textoApellido = tbxApellido.Text;
+            string textoEdad = tbxEdad.Text;
+            string textoDireccion = tbxDireccion.Text;
             
             if (conAceptar == 1 && !string.IsNullOrWhiteSpace(textoNombre) && !string.IsNullOrWhiteSpace(textoApellido) && !string.IsNullOrWhiteSpace(textoEdad) && !string.IsNullOrWhiteSpace(textoDireccion))
             {
@@ -107,17 +106,17 @@ namespace AplicacionWindows_2
         }
 
         //Cerrar con el btn2 = "Cancelar"
-        private bool btn2Clicked = false;
+        private bool btnCancelarClicked = false;
         private bool cerrando = false;
         private int contador = 1;
-        private void btn2_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (!btn2Clicked)
+            if (!btnCancelarClicked)
             {
                 MessageBox.Show("Gracias por su tiempo...");
                 cerrando = true;
                 this.Close();
-                btn2Clicked = true;
+                btnCancelarClicked = true;
             }
         }
 
